@@ -1,5 +1,7 @@
 # Claude Code — Compiled & Fixed
 
+**[English](README.md)** | **[中文](README_CN.md)**
+
 A working, buildable version of the [Claude Code](https://github.com/anthropics/claude-code) CLI, reconstructed from the leaked source (2026-03-31) with all missing files, broken imports, and runtime errors fixed.
 
 ---
