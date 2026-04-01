@@ -87,11 +87,8 @@
 git clone https://github.com/roger2ai/Claude-Code-Compiled.git
 cd Claude-Code-Compiled
 
-# 安装依赖（postinstall 自动创建 @ant/* stub）
+# 安装依赖（postinstall 自动创建 stub + 修补 Commander.js）
 bun install
-
-# 修补 Commander.js（多字符短标志不支持）
-# 详见 docs/BUILD.md §4.1 — 每次 bun install 后需重新应用
 
 # 编译
 bun build shims/macro.ts src/main.tsx --target=bun --outdir=./dist
@@ -236,5 +233,4 @@ claude-code/
 2. **需要 API key** — 实际对话必须设置 `ANTHROPIC_API_KEY`
 3. **macOS Keychain** — Linux 上回退到明文文件存储
 4. **WSL2 沙箱** — 需要 `apt install bubblewrap socat` 才能使用沙箱功能
-5. **Commander.js 补丁** — 多字符短标志（`-d2e`）每次 `bun install` 后需手动修补 `node_modules`
 

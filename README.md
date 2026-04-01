@@ -87,11 +87,8 @@ Two Anthropic-internal packages that can't be installed from npm:
 git clone https://github.com/roger2ai/Claude-Code-Compiled.git
 cd Claude-Code-Compiled
 
-# Install dependencies (postinstall auto-creates @ant/* stubs)
+# Install dependencies (postinstall auto-creates stubs + patches Commander.js)
 bun install
-
-# Patch Commander.js (multi-char short flags not supported upstream)
-# See docs/BUILD.md §4.1 for details — needs re-apply after bun install
 
 # Build
 bun build shims/macro.ts src/main.tsx --target=bun --outdir=./dist
@@ -236,5 +233,4 @@ All `@ant/*` package references are behind `feature()` guards and tree-shaken at
 2. **API key required** — `ANTHROPIC_API_KEY` must be set for actual queries
 3. **macOS Keychain** — falls back to plaintext file on Linux
 4. **Sandbox on WSL2** — requires `apt install bubblewrap socat` for sandbox features
-5. **Commander.js patch** — multi-character short flags (`-d2e`) need a manual patch to `node_modules` after each `bun install`
 
